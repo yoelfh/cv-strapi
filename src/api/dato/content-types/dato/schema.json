@@ -1,0 +1,90 @@
+{
+  "kind": "collectionType",
+  "collectionName": "datoes",
+  "info": {
+    "singularName": "dato",
+    "pluralName": "datoes",
+    "displayName": "Dato",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": true
+    }
+  },
+  "attributes": {
+    "fotoCV": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ],
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      }
+    },
+    "Nombre": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string",
+      "required": true
+    },
+    "Ocupacion": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    },
+    "Correo": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "email"
+    },
+    "Telefono": {
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "type": "string"
+    },
+    "conocimientos": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::conocimiento.conocimiento",
+      "mappedBy": "dato"
+    },
+    "educacions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::educacion.educacion",
+      "mappedBy": "dato"
+    },
+    "experiencias": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::experiencia.experiencia",
+      "mappedBy": "dato"
+    },
+    "habilidads": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::habilidad.habilidad",
+      "mappedBy": "dato"
+    }
+  }
+}

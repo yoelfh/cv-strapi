@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "educacions",
+  "info": {
+    "singularName": "educacion",
+    "pluralName": "educacions",
+    "displayName": "Educacion",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Institucion": {
+      "type": "string",
+      "required": true
+    },
+    "fechaEdu": {
+      "type": "string"
+    },
+    "Descripcion": {
+      "type": "text"
+    },
+    "dato": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::dato.dato",
+      "inversedBy": "educacions"
+    }
+  }
+}
