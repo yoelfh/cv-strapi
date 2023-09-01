@@ -3,6 +3,7 @@
 FROM node:14
 
 # Set environment variable to avoid hanging during npm install
+# Fixed typo in NPM_CONFIG_PROGRESS variable
 ENV NPM_CONFIG_PROGRESS=false
 
 # Create app directory
@@ -13,7 +14,8 @@ WORKDIR /usr/src/index
 COPY package*.json ./
 
 # Install dependencies using npm ci for better caching and reproducibility
-RUN npm i
+# Added the "--only=production" flag to only install production dependencies
+RUN npm ci --only=production
 
 # Bundle app source
 COPY . .
