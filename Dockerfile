@@ -6,14 +6,14 @@ FROM node:14
 ENV NPM_CONFIG_PROGRESS=false
 
 # Create app directory
-WORKDIR /usr/src/app
+WORKDIR /usr/src/index
 
 # Install app dependencies
 # A wildcard is used to ensure both package.json AND package-lock.json are copied
 COPY package*.json ./
 
 # Install dependencies using npm ci for better caching and reproducibility
-RUN npm ci
+RUN npm i
 
 # Bundle app source
 COPY . .
